@@ -72,24 +72,6 @@ class ImageGallery extends React.Component {
 		this.slideRight = this.slideRight.bind(this);
 	}
 
-	componentDidMount() {
-		const { autoPlay, useWindowKeyDown } = this.props;
-		if (useWindowKeyDown) {
-			window.addEventListener("keydown", this.handleKeyDown);
-		} else {
-			this.imageGallery.current.addEventListener(
-				"keydown",
-				this.handleKeyDown
-			);
-		}
-		window.addEventListener("mousedown", this.handleMouseDown);
-		window.addEventListener("touchmove", this.handleTouchMove, {
-			passive: false,
-		});
-
-		this.addScreenChangeEvent();
-	}
-
 	componentDidUpdate(prevProps, prevState) {
 		const {
 			items,
@@ -939,18 +921,7 @@ class ImageGallery extends React.Component {
 		if (slideOnThumbnailOver) this.onThumbnailMouseOver(event, index);
 	}
 
-	handleThumbnailKeyUp(event, index) {
-		// a11y support ^_^
-		// if (isEnterOrSpaceKey(event)) this.onThumbnailClick(event, index);
-	}
-
-	handleSlideKeyUp(event) {
-		// a11y support ^_^
-		// if (isEnterOrSpaceKey(event)) {
-		// 	const { onClick } = this.props;
-		// 	onClick(event);
-		// }
-	}
+	
 
 	isThumbnailVertical() {
 		const { thumbnailPosition } = this.props;
@@ -1234,8 +1205,6 @@ ImageGallery.defaultProps = {
 	infinite: false,
 	showBullets: false,
 	showThumbnails: true,
-	showPlayButton: true,
-	showFullscreenButton: true,
 	disableThumbnailScroll: false,
 	disableKeyDown: false,
 	disableSwipe: false,
@@ -1249,12 +1218,13 @@ ImageGallery.defaultProps = {
 	startIndex: 0,
 	swipingTransitionDuration: 0,
 	swipingThumbnailTransitionDuration: 0,
-	onSlide: null,
+	
 	onBeforeSlide: null,
 	onScreenChange: null,
 	
 	onClick: null,
 	onImageLoad: null,
+	onSlide: null,
 	// onImageError: null,
 	onTouchMove: null,
 	onTouchEnd: null,

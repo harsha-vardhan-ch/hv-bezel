@@ -4,7 +4,6 @@ import "./App.css";
 
 const PREFIX_URL = "./static/";
 
-console.log("Hai");
 class App extends React.Component {
 	constructor() {
 		super();
@@ -39,9 +38,6 @@ class App extends React.Component {
 		console.debug('slide to index', index);
 	}
 
-	_onScreenChange(fullScreenElement) {
-		console.debug("isFullScreen?", !!fullScreenElement);
-	}
 	_getStaticImages() {
 		let images = [];
 		for (let i = 2; i < 9; i++) {
@@ -50,7 +46,7 @@ class App extends React.Component {
 				thumbnail: `${PREFIX_URL}${i}t.jpg`,
 			});
 		}
-		console.log(images);
+		// console.log(images);
 		return images;
 	}
 
@@ -63,17 +59,15 @@ class App extends React.Component {
 					onClick={this._onImageClick.bind(this)}
 					onImageLoad={this._onImageLoad}
 					onSlide={this._onSlide.bind(this)}
-					onScreenChange={this._onScreenChange.bind(this)}
 					showBullets={true}
 					showThumbnails={true}
 					showNav={true}
 					thumbnailPosition={this.state.thumbnailPosition}
-					slideOnThumbnailOver={false}
 					swipeable={true}
 				/>
 			</section>
 		);
 	}
 }
-console.log("Hai 2");
+
 export default App;
