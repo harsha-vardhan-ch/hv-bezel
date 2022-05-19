@@ -10,7 +10,16 @@ const Item = React.memo(
 		original,
 	}) => {
 		const itemSrc = isFullscreen ? fullscreen || original : original;
-		return <Magnifier className="hv-point" src={itemSrc} width="100%" height="80%" mgWidth={200} mgHeight={200}/>;
+		return (
+			<Magnifier
+				className="hv-point"
+				src={itemSrc}
+				width="100%"
+				height="80%"
+				mgWidth={200}
+				mgHeight={200}
+			/>
+		);
 	}
 );
 

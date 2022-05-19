@@ -70,18 +70,6 @@ class ImageGallery extends React.Component {
 		this.renderItem = this.renderItem.bind(this);
 		this.slideLeft = this.slideLeft.bind(this);
 		this.slideRight = this.slideRight.bind(this);
-
-		// Used to update the throttle if slideDuration changes
-		// this.unthrottledSlideToIndex = this.slideToIndex;
-		// this.slideToIndex = throttle(
-		// 	this.unthrottledSlideToIndex,
-		// 	props.slideDuration,
-		// 	{ trailing: false }
-		// );
-
-		// if (props.lazyLoad) {
-		// 	this.lazyLoaded = [];
-		// }
 	}
 
 	componentDidMount() {
@@ -1242,10 +1230,8 @@ ImageGallery.defaultProps = {
 	onErrorImageURL: "",
 	additionalClass: "",
 	showNav: true,
-	autoPlay: false,
 	lazyLoad: false,
-	infinite: true,
-	showIndex: false,
+	infinite: false,
 	showBullets: false,
 	showThumbnails: true,
 	showPlayButton: true,
@@ -1261,7 +1247,6 @@ ImageGallery.defaultProps = {
 	stopPropagation: false,
 	thumbnailPosition: "bottom",
 	startIndex: 0,
-	slideDuration: 450,
 	swipingTransitionDuration: 0,
 	swipingThumbnailTransitionDuration: 0,
 	onSlide: null,
