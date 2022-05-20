@@ -3,6 +3,14 @@ import { bool, string } from "prop-types";
 import Magnifier from "react-magnifier";
 import "../styles/imageGallery.scss";
 
+// Packages for swiper package 
+
+// import SwiperCore, { Navigation, Pagination } from "swiper";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/swiper-bundle.min.css";
+// import "swiper/swiper.min.css";
+// SwiperCore.use([Navigation, Pagination]);
+
 const Item = React.memo(
 	({
 		fullscreen, // fullscreen version of img
@@ -11,6 +19,28 @@ const Item = React.memo(
 	}) => {
 		const itemSrc = isFullscreen ? fullscreen || original : original;
 		return (
+
+			// Tried to implement image swipe functionality with image zoom using swiper package 
+
+			// <React.Fragment>
+			// 	<Swiper
+			// 		navigation={true}
+			// 		modules={[Pagination, Navigation]}
+			// 		className="mySwiper"
+			// 	>
+			// 		<SwiperSlide>
+			// 			<Magnifier
+			// 				className="hv-point"
+			// 				src={itemSrc}
+			// 				width="100%"
+			// 				height="80%"
+			// 				mgWidth={200}
+			// 				mgHeight={200}
+			// 			/>
+			// 		</SwiperSlide>
+			// 	</Swiper>
+			// </React.Fragment>
+
 			<Magnifier
 				className="hv-point"
 				src={itemSrc}
