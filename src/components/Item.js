@@ -41,6 +41,9 @@ const Item = React.memo(
 			// 	</Swiper>
 			// </React.Fragment>
 
+			// Implemented it seperately without zoom functionality. Link to the repository https://github.com/harsha-vardhan-ch/bezel-hv2
+			
+
 			<Magnifier
 				className="hv-point"
 				src={itemSrc}
